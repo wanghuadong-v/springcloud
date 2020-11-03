@@ -1,8 +1,8 @@
-package com.demo.springboot.service.impl;
+package com.demo.springcloud.service.impl;
 
-import com.demo.springboot.dao.PaymentDao;
-import com.demo.springboot.entities.Payment;
-import com.demo.springboot.service.PaymentService;
+import com.demo.springcloud.dao.PaymentDao;
+import com.demo.springcloud.entities.Payment;
+import com.demo.springcloud.service.PaymentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

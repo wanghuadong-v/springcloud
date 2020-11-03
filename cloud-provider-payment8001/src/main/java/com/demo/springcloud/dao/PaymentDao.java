@@ -1,6 +1,6 @@
-package com.demo.springboot.dao;
+package com.demo.springcloud.dao;
 
-import com.demo.springboot.entities.Payment;
+import com.demo.springcloud.entities.Payment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,8 +1,8 @@
-package com.demo.springboot.controller;
+package com.demo.springcloud.controller;
 
-import com.demo.springboot.entities.CommonResult;
-import com.demo.springboot.entities.Payment;
-import com.demo.springboot.service.PaymentService;
+import com.demo.springcloud.entities.CommonResult;
+import com.demo.springcloud.entities.Payment;
+import com.demo.springcloud.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

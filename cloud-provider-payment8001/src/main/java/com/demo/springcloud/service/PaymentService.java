@@ -1,7 +1,6 @@
-package com.demo.springboot.service;
+package com.demo.springcloud.service;
 
-import com.demo.springboot.entities.Payment;
-import org.apache.ibatis.annotations.Param;
+import com.demo.springcloud.entities.Payment;
 
 public interface PaymentService {
     public int create(Payment payment);
