@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -14,9 +15,9 @@ public class paymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @GetMapping(value = "/creat")
+    @GetMapping(value = "/payment/create")
     @ResponseBody
-    public CommonResult creat(Payment payment){
+    public CommonResult creat(@RequestBody Payment payment){
         int i = paymentService.create(payment);
         if (i > 0){
             return new CommonResult(200,"插入数据库成功！",i);
