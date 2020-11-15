@@ -17,6 +17,7 @@ import sun.rmi.runtime.Log;
 import javax.annotation.Resource;
 import java.security.PrivateKey;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Controller
 public class paymentController {
@@ -40,7 +41,7 @@ public class paymentController {
 
     @GetMapping(value = "/payment/get/{id}")
     @ResponseBody
-    public CommonResult getPaymentById(@PathVariable("id")long id){
+    public CommonResult<Payment> getPaymentById(@PathVariable("id")long id){
         Payment payment = paymentService.selectPaymentById(id);
         if (payment != null){
             return new CommonResult(200,"查询数据成功！端口号：" + serverPort ,payment);
@@ -62,5 +63,22 @@ public class paymentController {
         }
 
         return discoveryClient;
+    }
+
+    @GetMapping(value = "/payment/lb")
+    @ResponseBody
+    public String getPaymentLb(){
+        return serverPort;
+    }
+
+    @GetMapping(value = "/payment/feign/timeout")
+    @ResponseBody
+    public String paymentFeignTimeout(){
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
     }
 }
