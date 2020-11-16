@@ -12,6 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @Version: 1.0
  */
 @SpringBootApplication
+@EnableEurekaClient
 @EnableFeignClients
 //feign集成hystrix，此注解开启hystrix
 @EnableHystrix
