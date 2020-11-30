@@ -12,7 +12,7 @@ spring:
       uri: http://localhost:3344
 
   rabbitmq:
-    host: 192.168.138.130
+    host: 192.168.133.99
     port: 5672
     username: guest
     password: guest
