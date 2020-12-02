@@ -29,6 +29,8 @@
         <module>cloud-stream-rabbitmq-consumer8802</module>
         <module>cloud-stream-rabbitmq-consumer8802</module>
         <module>cloud-rabbitmq-consumer8802</module>
+        <module>cloudalibaba-provider-payment9001</module>
+          <module>cloudalibaba-provider-payment9002</module>
       </modules>
       <packaging>pom</packaging>
   <!-- 统一管理jar包版本 -->
@@ -47,7 +49,14 @@
   <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->
   <dependencyManagement>
     <dependencies>
-
+      <!--springcloud alibaba-->
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>2.2.3.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <!--spring boot 2.2.2-->
       <dependency>
         <groupId>org.springframework.boot</groupId>
