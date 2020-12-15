@@ -1,0 +1,20 @@
+<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.demo.springcloud.dao.OrderDao">
+
+    <resultMap id="BaseResultMap" type="com.demo.springcloud.domain.Order">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <id column="user_id" property="userId" jdbcType="BIGINT"></id>
+        <id column="product_id" property="productId" jdbcType="BIGINT"></id>
+        <id column="count" property="count" jdbcType="INTEGER"></id>
+        <id column="money" property="money" jdbcType="BIGINT"></id>
+        <id column="status" property="status" jdbcType="BIGINT"></id>
+    </resultMap>
+
+    <insert id="create">
+        insert into t_order(user_id,product_id,count,money,status)
+        values(#{userId},#{productId},#{count},#{money},0)
+    </insert>
+
+    <update id="update">
+        update t_order set status = 1 where user_id = #{userId} and status = #{status}
+    </update>
+</mapper>
